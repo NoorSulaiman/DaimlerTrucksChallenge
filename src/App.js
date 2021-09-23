@@ -1,19 +1,21 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import PartsLookupPage from "./pages/SearchParts/PartsLookupPage";
+import PartSortingPage from "./pages/PartSorting/PartSortingPage";
 import DeletePartsPage from "./pages/DeleteParts/DeletePartsPage";
 function App() {
   // Added main routes for search and delete algorithm tasks
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" exact component={PartsLookupPage} />
+      <Router>
+        <header>
+          <NavBar />
+        </header>
+        <Switch>
+          <Route path="/" exact component={PartSortingPage} />
           <Route path="/delete" component={DeletePartsPage} />
-        </Routes>
-      </BrowserRouter>
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { AppBar, Toolbar, Tab, Tabs } from "@mui/material";
 import styles from "./NavBar.module.css";
 export default function NavBar() {
-  const navigate = useNavigate();
-  const [tabIndex, setTabIndex] = React.useState("search");
+  const history = useHistory();
+  const [tabIndex, setTabIndex] = useState("search");
 
   const handleTabChange = (event, newIndex) => {
     setTabIndex(newIndex);
+    history.push(newIndex);
   };
   return (
     <div>
@@ -20,16 +21,10 @@ export default function NavBar() {
             textColor="inherit"
             variant="fullWidth"
             aria-label="full width tabs example">
+            <Tab value={"/"} label="Sorted Parts" className={styles.navTab} />
             <Tab
-              value={"search"}
-              label="Parts Lookup"
-              onClick={() => navigate("/")}
-              className={styles.navTab}
-            />
-            <Tab
-              value={"delete"}
-              label="Delete Parts"
-              onClick={() => navigate("/delete")}
+              value={"/delete"}
+              label="Remove Parts"
               className={styles.navTab}
             />
           </Tabs>
