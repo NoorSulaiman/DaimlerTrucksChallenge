@@ -10,7 +10,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import DetailsTable from "../DetailsTable/DetailsTable";
 
-export default function ComponentsList({ components }) {
+export default function ComponentsDetailsList({ components }) {
   const componentCards = components.map((component) => {
     return (
       <Grid item xs={5}>

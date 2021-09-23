@@ -1,6 +1,5 @@
-button.navTab {
-  color: #ffffff;
-  width: 150px;
+.cardDeleteButton {
   text-transform: capitalize;
   font-size: 1em;
+  color: crimson;
 }

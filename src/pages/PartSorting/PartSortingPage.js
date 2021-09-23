@@ -1,29 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { responseFromApi } from "../../data/truckParts";
+import React, { useState, useContext } from "react";
+import { appContext } from "../../provider";
 import GroupsList from "../../components/GroupsList/GroupsList";
-import ComponentsList from "../../components/ComponentsList/ComponentsList";
+import ComponentsDetailsList from "../../components/ComponentsList/ComponentsDetailsList";
 
 export default function PartSortingPage() {
-  const groupsArray = responseFromApi.data.dashboard.components;
-  const [sortedGroupsList, setGroupList] = useState([]);
+  const context = useContext(appContext);
+  const groupsArray = context.parts;
   const [componentsList, setComponentsList] = useState([]);
-  useEffect(() => {
-    sortGroups();
-  }, []);
-  const sortGroups = () => {
-    //this function will take componentes location prefixes and sort them in array without duplicates.
-    //used object to store prefixes for duplicate check and filtering efficiency
-    let groupStore = {};
-    let sortedGroupArray = [];
-    groupsArray.map((component) => {
-      let prefix = component.location.slice(0, 2);
-      if (!groupStore[prefix]) {
-        groupStore[prefix] = prefix;
-        sortedGroupArray.push(prefix);
-      }
-    });
-    setGroupList(sortedGroupArray.sort());
-  };
+
   const sortComponents = (group) => {
     let sortedComponentsArray = [];
     groupsArray.map((component) => {
@@ -40,10 +24,14 @@ export default function PartSortingPage() {
   };
   return (
     <div>
-      {sortedGroupsList.length && (
-        <GroupsList groups={sortedGroupsList} selectGroup={sortComponents} />
+      {groupsArray.length ? (
+        <GroupsList components={groupsArray} selectGroup={sortComponents} />
+      ) : (
+        "No Groups Found..."
       )}
-      {componentsList.length && <ComponentsList components={componentsList} />}
+      {componentsList.length ? (
+        <ComponentsDetailsList components={componentsList} />
+      ) : null}
     </div>
   );
 }

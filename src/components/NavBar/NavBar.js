@@ -4,7 +4,7 @@ import { AppBar, Toolbar, Tab, Tabs } from "@mui/material";
 import styles from "./NavBar.module.css";
 export default function NavBar() {
   const history = useHistory();
-  const [tabIndex, setTabIndex] = useState("search");
+  const [tabIndex, setTabIndex] = useState("/");
 
   const handleTabChange = (event, newIndex) => {
     setTabIndex(newIndex);
