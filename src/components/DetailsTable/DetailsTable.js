@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   Table,
   TableContainer,
@@ -29,3 +30,6 @@ export default function DetailsTable({ component }) {
     </div>
   );
 }
+DetailsTable.propTypes = {
+  components: PropTypes.object,
+};

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FormControl, Select, MenuItem } from "@mui/material";
-
+import PropTypes from "prop-types";
 const GroupsList = ({ components, selectGroup }) => {
   const [group, setGroup] = useState("");
   const [groupList, setGroupList] = useState([]);
@@ -50,6 +50,11 @@ const GroupsList = ({ components, selectGroup }) => {
       </FormControl>
     </div>
   );
+};
+
+GroupsList.propTypes = {
+  components: PropTypes.object,
+  selectGroup: PropTypes.func,
 };
 
 export default GroupsList;

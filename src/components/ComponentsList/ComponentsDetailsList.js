@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   Accordion,
   AccordionSummary,
@@ -38,3 +39,7 @@ export default function ComponentsDetailsList({ components }) {
     </div>
   );
 }
+
+ComponentsDetailsList.propTypes = {
+  components: PropTypes.object,
+};

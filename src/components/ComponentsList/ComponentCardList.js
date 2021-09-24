@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import styles from "./ComponentCard.module.css";
 import {
   Card,
@@ -83,3 +84,8 @@ export default function ComponentCardList({ components, cardButtonFunction }) {
     </div>
   );
 }
+
+ComponentCardList.propTypes = {
+  components: PropTypes.object,
+  cardButtonFunction: PropTypes.func,
+};
