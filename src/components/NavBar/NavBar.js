@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { AppBar, Toolbar, Tab, Tabs } from "@mui/material";
 import styles from "./NavBar.module.css";
 export default function NavBar() {
   const history = useHistory();
   const [tabIndex, setTabIndex] = useState("/");
-
+  useEffect(() => {
+    setTabIndex("/");
+    history.push("/");
+  }, []);
   const handleTabChange = (event, newIndex) => {
     setTabIndex(newIndex);
     history.push(newIndex);

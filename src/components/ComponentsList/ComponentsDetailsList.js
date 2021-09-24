@@ -13,7 +13,7 @@ import DetailsTable from "../DetailsTable/DetailsTable";
 export default function ComponentsDetailsList({ components }) {
   const componentCards = components.map((component) => {
     return (
-      <Grid item xs={5}>
+      <Grid key={component.location} item xs={5}>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}

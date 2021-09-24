@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComponentCardList should render ComponentCardList correctly with given props 1`] = `ShallowWrapper {}`;
+
+exports[`ComponentsDetailsList should render ComponentCardList correctly with given props 1`] = `ShallowWrapper {}`;
