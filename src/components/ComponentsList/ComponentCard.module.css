@@ -1,5 +1,10 @@
-.cardDeleteButton {
+button.cardDeleteButton {
   text-transform: capitalize;
   font-size: 1em;
   color: crimson;
+  margin: 0 auto;
+}
+p.itemName {
+  margin: 0 auto 0 20%;
+  font-size: 1.5em;
 }

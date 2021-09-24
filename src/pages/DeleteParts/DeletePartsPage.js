@@ -26,6 +26,7 @@ export default function PartSortingPage() {
     let newComponentsArray = componentsList;
     context.parts.map((component, indx) => {
       if (locationName === component.location) {
+        // Removed item will not be shown in Part Sorting page, as it's been removed from the context
         context.parts.splice(indx, 1);
         newComponentsArray.splice(indx, 1);
         setComponentsList(newComponentsArray);

@@ -43,13 +43,14 @@ export default function ComponentCardList({ components, cardButtonFunction }) {
       <Grid key={component.location} item xs={1}>
         <Card>
           <CardContent>
-            <Typography>{component.location}</Typography>
+            <Typography className={styles.itemName}>
+              {component.location}
+            </Typography>
           </CardContent>
           <CardActions>
             <Button
               onClick={() => onDeleteClick(component.location)}
-              className={styles.cardDeleteButton}
-              size="small">
+              className={styles.cardDeleteButton}>
               Delete
             </Button>
           </CardActions>

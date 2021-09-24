@@ -11,7 +11,7 @@ import {
 export default function DetailsTable({ component }) {
   const componentProps = Object.keys(component).map((prop, indx) => {
     return (
-      <TableRow key={component}>
+      <TableRow key={indx}>
         <TableCell component="th" scope="row">
           {prop}
         </TableCell>
