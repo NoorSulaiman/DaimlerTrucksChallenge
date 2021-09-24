@@ -1,6 +1,6 @@
 # DaimlerTrucksChallenge
 
-This app is represents 2 algorthims, 1st one is sorting, grouping and remove duplicates, the 2nd is prune algorithm.
+This app represents 2 algorthims, 1st one is sorting, grouping and remove duplicates, the 2nd is prune algorithm.
 
 ## Getting Started
 
